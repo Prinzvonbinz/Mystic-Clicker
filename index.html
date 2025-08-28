@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mystic Clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="menu-bar">
+    <button class="menu-btn" data-menu="normal">Klicken</button>
+    <button class="menu-btn" data-menu="shop">Shop</button>
+    <button class="menu-btn" data-menu="prestige">Prestige</button>
+  </div>
+
+  <div id="normal" class="menu active">
+    <div id="top-bar">
+      <div>Geld: <span id="money">0</span> 💰</div>
+      <div>Mana/Klick: <span id="mpc">1</span></div>
+    </div>
+    <div id="crystals-container"></div>
+  </div>
+
+  <div id="shop" class="menu">
+    <h2>Shop</h2>
+
+    <div class="shop-list">
+      <div class="shop-item">
+        <div class="shop-left">
+          <div class="shop-title">Mana/Klick +1</div>
+          <div class="shop-price">Preis: <span id="upgradeMPCPrice">50</span> 💰</div>
+        </div>
+        <button id="buyMPC">Kaufen</button>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-left">
+          <div class="shop-title">Automatik +1 Mana/Sekunde</div>
+          <div class="shop-price">Preis: <span id="upgradeAutoPrice">100</span> 💰</div>
+        </div>
+        <button id="buyAuto">Kaufen</button>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-left">
+          <div class="shop-title">Neuer Kristall</div>
+          <div class="shop-price">Preis: <span id="upgradeCrystalPrice">1000</span> 💰</div>
+        </div>
+        <button id="buyCrystal">Kaufen</button>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-left">
+          <div class="shop-title">Mehr Geld (Bonus pro gefülltem Kristall)</div>
+          <div class="shop-price">Preis: <span id="upgradeExtraMoneyPrice">500</span> 💰</div>
+        </div>
+        <button id="buyExtraMoney">Kaufen</button>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-left">
+          <div class="shop-title">Schnellere Automatik (Intervall -100ms)</div>
+          <div class="shop-price">Preis: <span id="upgradeAutoSpeedPrice">500</span> 💰</div>
+        </div>
+        <button id="buyAutoSpeed">Kaufen</button>
+      </div>
+    </div>
+
+    <div style="width:100%; text-align:center; margin-top:14px;">
+      <button id="resetGame">Spiel zurücksetzen</button>
+    </div>
+  </div>
+
+  <div id="prestige" class="menu">
+    <h2>Prestige</h2>
+    <div>Prestige Level: <span id="prestigeLevel">0</span></div>
+    <div>Prestige Preis: <span id="prestigePrice">5000</span> 💰</div>
+    <button id="doPrestige">Prestige</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
