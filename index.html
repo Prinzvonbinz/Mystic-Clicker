@@ -1,81 +1,45 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mystic Clicker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday Adventure Quiz 2.0</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="menu-bar">
-    <button class="menu-btn" data-menu="normal">Klicken</button>
-    <button class="menu-btn" data-menu="shop">Shop</button>
-    <button class="menu-btn" data-menu="prestige">Prestige</button>
-  </div>
+  <div class="container">
+    <h1>Holiday Adventure Quiz 2.0</h1>
 
-  <div id="normal" class="menu active">
-    <div id="top-bar">
-      <div>Geld: <span id="money">0</span> 💰</div>
-      <div>Mana/Klick: <span id="mpc">1</span></div>
-    </div>
-    <div id="crystals-container"></div>
-  </div>
-
-  <div id="shop" class="menu">
-    <h2>Shop</h2>
-
-    <div class="shop-list">
-      <div class="shop-item">
-        <div class="shop-left">
-          <div class="shop-title">Mana/Klick +1</div>
-          <div class="shop-price">Preis: <span id="upgradeMPCPrice">50</span> 💰</div>
-        </div>
-        <button id="buyMPC">Kaufen</button>
-      </div>
-
-      <div class="shop-item">
-        <div class="shop-left">
-          <div class="shop-title">Automatik +1 Mana/Sekunde</div>
-          <div class="shop-price">Preis: <span id="upgradeAutoPrice">100</span> 💰</div>
-        </div>
-        <button id="buyAuto">Kaufen</button>
-      </div>
-
-      <div class="shop-item">
-        <div class="shop-left">
-          <div class="shop-title">Neuer Kristall</div>
-          <div class="shop-price">Preis: <span id="upgradeCrystalPrice">1000</span> 💰</div>
-        </div>
-        <button id="buyCrystal">Kaufen</button>
-      </div>
-
-      <div class="shop-item">
-        <div class="shop-left">
-          <div class="shop-title">Mehr Geld (Bonus pro gefülltem Kristall)</div>
-          <div class="shop-price">Preis: <span id="upgradeExtraMoneyPrice">500</span> 💰</div>
-        </div>
-        <button id="buyExtraMoney">Kaufen</button>
-      </div>
-
-      <div class="shop-item">
-        <div class="shop-left">
-          <div class="shop-title">Schnellere Automatik (Intervall -100ms)</div>
-          <div class="shop-price">Preis: <span id="upgradeAutoSpeedPrice">500</span> 💰</div>
-        </div>
-        <button id="buyAutoSpeed">Kaufen</button>
-      </div>
+    <!-- Fragenbereich -->
+    <div id="quiz-screen">
+      <h2 id="question-title"></h2>
+      <p id="question-text"></p>
+      <input type="text" id="answer-input" placeholder="Antwort eingeben">
+      <button id="save-btn">Antwort speichern</button>
+      <p id="feedback"></p>
     </div>
 
-    <div style="width:100%; text-align:center; margin-top:14px;">
-      <button id="resetGame">Spiel zurücksetzen</button>
+    <!-- Noch nicht freigeschaltet -->
+    <div id="locked-screen" class="hidden">
+      <h2>⏳ Diese Frage ist noch nicht freigeschaltet!</h2>
+      <p>Bitte schau am richtigen Tag wieder vorbei.</p>
     </div>
-  </div>
 
-  <div id="prestige" class="menu">
-    <h2>Prestige</h2>
-    <div>Prestige Level: <span id="prestigeLevel">0</span></div>
-    <div>Prestige Preis: <span id="prestigePrice">5000</span> 💰</div>
-    <button id="doPrestige">Prestige</button>
+    <!-- Lösungsmenu -->
+    <div id="solution-screen" class="hidden">
+      <h2>Finale Lösung 🎉</h2>
+      <input type="text" id="solution-input" placeholder="Endlösung eingeben">
+      <button id="solution-btn">Prüfen</button>
+      <p id="solution-feedback"></p>
+    </div>
+
+    <!-- Win Screen -->
+    <div id="win-screen" class="hidden">
+      <h2>Gewonnen! 🎉</h2>
+      <p>Uhrzeit: <span id="time"></span></p>
+      <button id="share-btn">Teilen</button>
+      <canvas id="win-canvas" width="400" height="300" class="hidden"></canvas>
+    </div>
   </div>
 
   <script src="main.js"></script>
